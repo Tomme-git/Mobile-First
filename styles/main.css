@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --pink: #f1c9c9;
+    --blue: #5b87b5;
+    --green: #d4e1bc;
+    --black: #121212;
+    --white: #f5f5f5;
+}
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration: none;
+    font-family: 'Poppins', Helvetica, sans-serif;
+}
+
+
+/*********************** HEADER ***********************/
+header {
+    height: 160px;
+    width: 100%;
+    background-color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: white;
+    font-size: 20pt;
+}
+
+header > nav {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header > nav > a {
+    height: 60px;
+    min-width: 90px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+header > nav > a:hover {
+    background-color: var(--pink);
+}
+
+header > div {
+    height: 80%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > div > a {
+    display: flex;
+    align-items: center;
+}
+
+header > div > a > img {
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+header > div:nth-child(1) {
+    border-right: 1px solid rgba(255, 255, 255, 0.6)
+}
+
+header > div:nth-child(3) {
+    border-left: 1px solid rgba(255, 255, 255, 0.6)
+}
+
+header > div:nth-child(3) > a {
+    padding: 10px;
+    background-color: var(--blue);
+    box-shadow: 2px 4px 10px grey;
+    transition: 0.5s;
+}
+
+header > div:nth-child(3) > a:hover {
+    box-shadow: 4px 8px 15px grey;
+    transform: scale(1.1);
+}
+
+/*********************** MAIN CONTENT - FRONTPAGE ***********************/
+main {
+    width: 100%;
+    min-height: 500px;
+}
+
+#th > .hero {
+    background-image: url("../images/hero.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 75%;
+    margin: 20px auto 40px auto;
+}
+
+#th > .aboutus{
+    min-height: 600px;
+    width: 100%;
+}
+
+#th > .aboutus > h1{
+    font-size: 40pt;
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+}
+
+#th > .aboutus > div {
+    margin-bottom: 60px;
+}
+
+#th > .aboutus > div > h2{
+    margin: 30px 0;
+    font-size: 20pt;
+    font-family: 'Poppin', Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 400;
+}
+
+#th > .aboutus > div > p{
+    font-size: 15pt;
+    font-family: 'Poppin', Helvetica, sans-serif;
+    font-weight: 400;
+    max-width: 800px;
+    margin:0 auto;
+}
+
+#th > .aboutus > a {
+    display: flex;
+    height: 80px;
+    width: 300px;
+    background-color: var(--blue);
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+    font-size: 20pt;
+    transition: 0.5s;
+}
+
+#th > .aboutus > a:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 10px 20px grey;
+}
+
+#th > .collection {
+    position: relative;
+    min-height: 600px;
+    top: 400px;
+}
+
+.slidershow {
+    width: 900px;
+    overflow: hidden;
+    position: relative;
+}
+
+.middle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 500%;
+    display: flex;
+}
+
+.slide {
+    width: 20%;
+    transition: 0.6s;
+}
+
+#r1:checked ~ .s1 {
+margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#r3:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#r4:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#r5:checked ~ .s1 {
+    margin-left: -80%;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.bar{
+    width: 50px;
+    height: 10px;
+    border: 2px solid white;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/* MAIN CONTENT - BUTIK OVERSIGT */
+
+.main-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.text-section {
+    text-align: center;
+    margin-top: 2em;
+    line-height: 1.8;
+}
+
+.text-section h1 {
+    font-size: 4em;
+    font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+}
+
+.store-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+.card {
+    width: 30%;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.card h2 {
+    color: var(--pink);
+    text-align: center;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.card img {
+    width: 100%;
+    filter: brightness(70%);
+}
+
+
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: var(--green);
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+footer .hovedkontor h3, .butikker h3, .socials h3 {
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 0.5em;
+}
+
+footer a {
+    color: black;
+}
+
+.butikker a {
+    text-decoration: underline;
+}
+
+.socials a img {
+    max-height: 20px;
+    width: auto;
+}
+
+
+/*********************** MEDIA QUERIES ***********************/
+@media only screen and (min-width: 768px) {
+    .smallnav {
+        display: none;
+    }
+
+     /* Hover effekt for laptop version */
+    .card:hover {
+        transform: scale(1.1);
+        z-index: 1;
+    }
+
+    .store-cards {
+        gap: 2em;
+        margin-bottom: 2em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .largenav {
+        display: none;
+    }
+
+    .smallnav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+
+    #th > .hero {
+        background-image: url("../images/heromobile.jpg");
+        height: 300px;
+        width: 100%;
+    }
+
+    #th > .aboutus > div{
+        padding: 20px;
+    }
+
+    #th > .aboutus > div > p{
+        font-size: 15pt;
+        font-family: 'Poppin', Helvetica, sans-serif;
+        font-weight: 400;
+        max-width: 800px;
+        text-align: center;
+    }
+
+     /* Media Query for "cards" på butik-oversigt-fanen */
+    .card {
+        width: 100%;
+    }
+}
