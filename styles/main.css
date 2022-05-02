@@ -47,6 +47,8 @@ header > nav > a {
     min-width: 90px;
     padding: 10px;
     transition: 0.5s;
+    display: flex;
+    align-items: center;
 }
 
 header > nav > a:hover {
@@ -96,6 +98,10 @@ header > div:nth-child(3) > a:hover {
 main {
     width: 100%;
     min-height: 500px;
+}
+
+#th {
+    margin-bottom: 70px;
 }
 
 #th > .hero {
@@ -160,11 +166,11 @@ main {
 #th > .collection {
     position: relative;
     min-height: 600px;
-    top: 400px;
+    top: 360px;
 }
 
 .slidershow {
-    width: 900px;
+    max-width: 900px;
     overflow: hidden;
     position: relative;
 }
@@ -285,6 +291,7 @@ footer {
     background-color: var(--green);
     padding-top: 2em;
     padding-bottom: 2em;
+    position: relative;
 }
 
 footer .hovedkontor h3, .butikker h3, .socials h3 {
@@ -307,6 +314,13 @@ footer a {
 
 
 /*********************** MEDIA QUERIES ***********************/
+@media only screen and (max-width: 950px) {
+    header > nav > a, header > .largenav a {
+        font-size: 2.5vw;
+    }
+}
+
+
 @media only screen and (min-width: 768px) {
     .smallnav {
         display: none;
@@ -363,5 +377,9 @@ footer a {
      /* Media Query for "cards" på butik-oversigt-fanen */
     .card {
         width: 100%;
+    }
+
+    footer p, .hovedkontor a {
+        font-size:2.5vw;
     }
 }
