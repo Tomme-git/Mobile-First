@@ -100,6 +100,7 @@ main {
     min-height: 500px;
 }
 
+/* hero */
 #th {
     margin-bottom: 70px;
 }
@@ -114,6 +115,7 @@ main {
     margin: 20px auto 40px auto;
 }
 
+/* Om os */
 #th > .aboutus{
     min-height: 600px;
     width: 100%;
@@ -163,13 +165,19 @@ main {
     box-shadow: 5px 10px 20px grey;
 }
 
-#th > .collection {
+/* slideshow - kollektion */
+.collection {
     position: relative;
-    min-height: 600px;
-    top: 360px;
+    min-height:100vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--pink);
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 50px;
 }
 
-.slidershow {
+.slideshow {
     width: 1100px;
     overflow: hidden;
     position: relative;
@@ -177,9 +185,8 @@ main {
 
 .middle {
     position: relative;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
 }
 
 input[name="r"]{
@@ -199,6 +206,12 @@ input[name="r"]{
     overflow: hidden;
 }
 
+.slide img {
+    width: 1100px;
+    height: 716px;
+    background-position: center;
+    background-size: cover;
+}
 
 #r1:checked ~ .s1 {
     margin-left: 0;
@@ -228,14 +241,69 @@ input[name="r"]{
     display: flex;
 }
 
-.bar{
+.circle{
     width: 25px;
     height: 25px;
     border: 2px solid white;
     border-radius: 50px;
-    margin: 6px;
+    margin: 0 20px 10px 20px;
     cursor: pointer;
     transition: 0.4s;
+}
+
+.collection > h1 {
+    margin-top: 20px;
+    font-size: 25pt;
+}
+
+.collection > h1, .collection > p {
+    margin-bottom: 15px;
+}
+
+.collection > a {
+    color: var(--blue);
+    text-decoration: underline;
+    font-style:italic;
+}
+
+/* Nyhedsbrev */
+.newsletter {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.newsletter > p {
+    width: 60%;
+    font-size: 20pt;
+    margin: 0 auto 25px auto;
+    text-align: center;
+}
+
+.newsletter > form > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="email"], input[type="text"] {
+    height: 100px;
+    width: 250px;
+    margin: 10px;
+    border:none;
+    text-align: center;
+    font-size: 15pt;
+    border: 1px solid var(--blue);
+}
+
+input[type="submit"] {
+    background-color: var(--blue);
+    border: none;
+    height: 70px;
+    width: 520px;
+    color: white;
+    display: flex;
+    margin: 0 auto;
+    font-size: 15pt;
 }
 
 /* MAIN CONTENT - BUTIK OVERSIGT */
@@ -284,6 +352,83 @@ input[name="r"]{
     filter: brightness(70%);
 }
 
+/* MAIN CONTENT - Århus butikken */
+#ss .img-wrapper {
+    height: 70vh;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+#ss .img-wrapper .aarhusbg {
+    height: 70vh;
+    background-image:url("../images/aarhus1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#ss .aabningstider {
+    position: relative;
+    display: flex;
+    gap: 2em;
+    background-color: black;
+    min-width: 400px;
+    max-width: 30vw;
+    padding: 1em 2em;
+    top: 80%;
+    justify-content: center;
+}
+
+#ss .aabningstider p {
+    color: white;
+}
+
+#ss .main-container section {
+    text-align: center;
+    width: 100%;
+}
+
+#ss .main-container section h1 {
+    margin-bottom: 1em;
+}
+
+#ss .main-container section h2 {
+    margin: 1em;
+}
+
+#ss .main-container section p {
+    line-height: 1.8;
+    max-width: 50vw;
+    margin: 0 auto;
+}
+
+#ss .main-container section img {
+    max-width: 40px;
+    height: auto;
+    margin-bottom: 3em;
+}
+
+#ss .main-container .brands {
+    background-color: var(--pink);
+    width: 100vw;
+}
+
+#ss .main-container .brands h1 {
+    margin: 2em;
+}
+
+#ss .main-container .brands .brand-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#ss .main-container .brands .brand-container div {
+    display: flex;
+    gap: 4em;
+}
 
 
 /* Footer */
@@ -339,6 +484,15 @@ footer a {
         gap: 2em;
         margin-bottom: 2em;
     }
+
+    /* Større billeder for laptop for Århus butik */
+    #ss .main-container .brands .brand-container div img {
+        transform: scale(2);
+    }
+
+    #ss .main-container .brands .brand-container div {
+        gap: 10em;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -365,6 +519,10 @@ footer a {
         width: 100%;
     }
 
+    #th > .aboutus {
+        margin-bottom: 60px;
+    }
+
     #th > .aboutus > div{
         padding: 20px;
     }
@@ -379,10 +537,35 @@ footer a {
 
     /* slideshow */
 
-    .slide img {
-        height: 100%;
+    .collection {
+        min-height: 20vh;
     }
 
+    .slide img {
+        height: calc(716px/1.5);
+        background-position: top center;
+    }
+
+    /* newsletter */
+
+    .newsletter {
+        width: 100%;
+    }
+
+    .newsletter > form > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input[type="email"], input[type="text"] {
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
 
      /* Media Query for "cards" på butik-oversigt-fanen */
     .card {
@@ -392,4 +575,6 @@ footer a {
     footer p, .hovedkontor a {
         font-size:2.5vw;
     }
+
+    
 }
