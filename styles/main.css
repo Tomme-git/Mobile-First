@@ -214,6 +214,10 @@ input[name="r"]{
     background-size: cover;
 }
 
+.slide .imagemobile {
+    display: none;
+}
+
 #r1:checked ~ .s1 {
     margin-left: 0;
 }
@@ -275,6 +279,13 @@ input[name="r"]{
 .newsletter {
     width: 100%;
     margin: 0 auto;
+}
+
+.newsletter > h1 {
+    width: 60%;
+    font-size: 25pt;
+    margin: 0 auto 25px auto;
+    text-align: center;
 }
 
 .newsletter > p {
@@ -591,9 +602,20 @@ footer a {
         min-height: 20vh;
     }
 
-    .slide img {
-        height: calc(716px/1.5);
-        background-position: top center;
+    .slideshow {
+        width: 768px;
+    }
+
+    .slide .image {
+        display: none;     
+    }
+
+    .slide .imagemobile {
+        width: 768px;
+        height: 716px;
+        background-size: cover;
+        display:flex;
+        
     }
 
     /* newsletter */
@@ -619,7 +641,6 @@ footer a {
     }
 
      /* Media Query for "cards" på butik-oversigt-fanen */
-
     .store-cards{
         gap:1em;
     }
