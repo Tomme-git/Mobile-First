@@ -119,6 +119,7 @@ main {
 #th > .aboutus{
     min-height: 600px;
     width: 100%;
+    text-align: center;
 }
 
 #th > .aboutus > h1{
@@ -206,7 +207,7 @@ input[name="r"]{
     overflow: hidden;
 }
 
-.slide img {
+.slide .image {
     width: 1100px;
     height: 716px;
     background-position: center;
@@ -249,6 +250,10 @@ input[name="r"]{
     margin: 0 20px 10px 20px;
     cursor: pointer;
     transition: 0.4s;
+}
+
+.circle:hover {
+    background-color: white;
 }
 
 .collection > h1 {
@@ -301,7 +306,7 @@ input[type="submit"] {
     height: 70px;
     width: 520px;
     color: white;
-    display: flex;
+    display: block;
     margin: 0 auto;
     font-size: 15pt;
 }
@@ -335,6 +340,7 @@ input[type="submit"] {
     width: 30%;
     transition: 0.3s ease;
     position: relative;
+    overflow:hidden;
 }
 
 .card h2 {
@@ -348,6 +354,7 @@ input[type="submit"] {
 }
 
 .card img {
+    height:100%;
     width: 100%;
     filter: brightness(70%);
 }
@@ -384,52 +391,68 @@ input[type="submit"] {
     color: white;
 }
 
-#ss .main-container section {
+
+
+#ss > .main-container {
+    width: 100%;
+}
+
+#ss > .main-container > .about {
     text-align: center;
     width: 100%;
 }
 
-#ss .main-container section h1 {
+#ss > .main-container > .about > h1 {
     margin-bottom: 1em;
 }
 
-#ss .main-container section h2 {
+#ss > .main-container > .about > h2 {
     margin: 1em;
 }
 
-#ss .main-container section p {
+#ss > .main-container > .about > p {
     line-height: 1.8;
     max-width: 50vw;
     margin: 0 auto;
 }
 
-#ss .main-container section img {
+#ss > .main-container > .about img {
     max-width: 40px;
     height: auto;
     margin-bottom: 3em;
 }
 
-#ss .main-container .brands {
+.mobilesocial {
+    display: none;
+}
+
+.fb-page {
+    padding-bottom: 40px;
+}
+
+#ss > .main-container > .brands {
     background-color: var(--pink);
-    width: 100vw;
+    padding-bottom: 50px;
 }
 
-#ss .main-container .brands h1 {
-    margin: 2em;
+#ss > .main-container > .brands > h1 {
+    padding: 50px 0 80px 0;
+    text-align: center;
 }
 
-#ss .main-container .brands .brand-container {
+#ss > .main-container > .brands > .brand-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 60%;
+    gap: 10em;
 }
 
-#ss .main-container .brands .brand-container div {
-    display: flex;
-    gap: 4em;
+#ss > .main-container > .brands > .brand-container > img{
+    max-width: 50px;
 }
-
 
 /* Footer */
 footer {
@@ -460,6 +483,28 @@ footer a {
     width: auto;
 }
 
+/* Menu page */
+.menuwrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 10%;
+    background: var(--green);
+}
+
+.menuwrapper a {
+    font-weight: 500;
+    font-size: 1.5em;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    border-left: 4px solid var(--clr);
+    transition: 0.5s ease;
+    padding-left: 1ch;
+}
+
 
 /*********************** MEDIA QUERIES ***********************/
 @media only screen and (max-width: 950px) {
@@ -485,13 +530,18 @@ footer a {
         margin-bottom: 2em;
     }
 
+    
+
     /* Større billeder for laptop for Århus butik */
-    #ss .main-container .brands .brand-container div img {
+    #ss .main-container .brands .brand-container img {
         transform: scale(2);
     }
 
-    #ss .main-container .brands .brand-container div {
-        gap: 10em;
+    /* Menu page */
+    .menuwrapper a:hover {
+        color: var(--clr);
+        transform: scale(1.2);
+        padding: 1em 0.5em;
     }
 }
 
@@ -550,6 +600,7 @@ footer a {
 
     .newsletter {
         width: 100%;
+        padding:5px;
     }
 
     .newsletter > form > div {
@@ -568,6 +619,11 @@ footer a {
     }
 
      /* Media Query for "cards" på butik-oversigt-fanen */
+
+    .store-cards{
+        gap:1em;
+    }
+
     .card {
         width: 100%;
     }
@@ -576,5 +632,46 @@ footer a {
         font-size:2.5vw;
     }
 
+    /* Menu page */
+    .menuwrapper {
+        gap:7%;
+    }
+    .menuwrapper a {
+        border: 4px solid var(--clr);
+        background-color: var(--clr);
+        width: 210px;
+        padding:10px 0;
+        white-space: nowrap;
+    }
+
+    /* Aarhus siden */
+
+    #ss > .main-container > .about > p {
+        max-width: 100%;
+        padding: 10px;
+
+    }
+    .mobilesocial {
+        display: block;
+    }
+
+    .fb-page {
+        display: none;
+    }
+    .fb_iframe_widget {
+        display: none !important;
+    }
+
+    #ss > .main-container > .brands > .brand-container{
+        width: 100%;
+        justify-content: space-evenly;
+        gap: 7em;
+        padding:10px;
+    }
+
+    #ss > .main-container > .brands > .brand-container img {
+        max-width: 80px;
+        flex: 0 0 33.333333%;
+    }
     
 }
