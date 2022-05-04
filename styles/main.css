@@ -323,6 +323,7 @@ input[type="submit"] {
     display: block;
     margin: 0 auto;
     font-size: 15pt;
+    cursor: pointer;
 }
 
 /* MAIN CONTENT - BUTIK OVERSIGT */
@@ -354,7 +355,7 @@ input[type="submit"] {
     width: 30%;
     transition: 0.3s ease;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .card h2 {
@@ -371,6 +372,7 @@ input[type="submit"] {
     height:100%;
     width: 100%;
     filter: brightness(70%);
+    object-fit: cover;
 }
 
 /* MAIN CONTENT - Århus butikken */
@@ -382,7 +384,7 @@ input[type="submit"] {
 
 #ss .img-wrapper .aarhusbg {
     height: 70vh;
-    background-image:url("../images/aarhus1.png");
+    background-image:url("../images/aarhus1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -562,7 +564,7 @@ footer a {
 @media only screen and (max-width: 768px) {
     header {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -574,7 +576,11 @@ footer a {
         height: 100%;
         display: flex;
         align-items: center;
-        padding: 40px;
+        padding:0;
+    }
+    .smalllogo {
+        max-width: 70%;
+        height: auto;
     }
 
     #th > .hero {
@@ -653,8 +659,16 @@ footer a {
         width: 100%;
     }
 
+    footer h3 {
+        font-size: max(3vw, 15px);
+    }
+
     footer p, .hovedkontor a {
-        font-size:2.5vw;
+        font-size: max(2.5vw, 12px);
+    }
+
+    .hovedkontor a {
+        line-height: 48px;
     }
 
     /* Menu page */
@@ -664,12 +678,17 @@ footer a {
     .menuwrapper a {
         border: 4px solid var(--clr);
         background-color: var(--clr);
+        color:white;
         width: 210px;
         padding:10px 0;
         white-space: nowrap;
     }
 
     /* Aarhus siden */
+
+    #ss .img-wrapper .aarhusbg {
+        background-image:url("../images/aarhus1mobile.jpg");
+    }
 
     #ss > .main-container > .about > p {
         max-width: 100%;
