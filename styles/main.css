@@ -516,7 +516,7 @@ footer a {
     color: black;
     text-transform: uppercase;
     text-align: center;
-    border-left: 4px solid var(--clr);
+    border-left: 4px var(--blue);
     transition: 0.5s ease;
     padding-left: 1ch;
 }
@@ -676,8 +676,8 @@ footer a {
         gap:7%;
     }
     .menuwrapper a {
-        border: 4px solid var(--clr);
-        background-color: var(--clr);
+        border: 4px solid var(--blue);
+        background-color: var(--blue);
         color:white;
         width: 210px;
         padding:10px 0;
