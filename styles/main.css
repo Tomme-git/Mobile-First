@@ -653,6 +653,7 @@ footer a {
      /* Media Query for "cards" på butik-oversigt-fanen */
     .store-cards{
         gap:1em;
+        margin-bottom: 1em;
     }
 
     .card {
